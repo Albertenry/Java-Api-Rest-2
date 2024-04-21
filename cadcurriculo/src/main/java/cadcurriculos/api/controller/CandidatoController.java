@@ -41,6 +41,14 @@ public class CandidatoController {
         return new ResponseEntity<>(candidatos, HttpStatus.OK);
     }
 
+    @GetMapping("/{id}")
+    public ResponseEntity<CandidatoEntity> getCandidatoById(@PathVariable Long id) {
+        Optional<CandidatoEntity> optional = candidatoRepository.findById(id);
+        return optional.map(candidato -> ResponseEntity.ok().body(candidato))
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+
     @PutMapping("/{id}")
     public ResponseEntity<CandidatoEntity> updateCandidato(@PathVariable Long id, @RequestBody CandidatoDTO dados) {
         Optional<CandidatoEntity> optional = candidatoRepository.findById(id);

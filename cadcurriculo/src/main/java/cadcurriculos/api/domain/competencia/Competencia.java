@@ -33,4 +33,7 @@ public class Competencia {
         this.descricao = competenciaDTO.descricao();
         this.nivelProficiencia = competenciaDTO.nivelProficiencia();
     }
+
+    public Competencia(Object o) {
+    }
 }
