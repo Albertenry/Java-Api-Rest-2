@@ -1,7 +1,7 @@
 package cadcurriculos.api.domain.competencia;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import cadcurriculos.api.domain.candidato.CandidatoEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import cadcurriculos.api.domain.dto.CompetenciaDTO;
 import jakarta.persistence.*;
 import lombok.Getter;
@@ -26,7 +26,7 @@ public class Competencia {
 
     @ManyToOne
     @JoinColumn(name = "candidato_id", nullable = false)
-    @JsonIgnoreProperties("competencias")
+    @JsonIgnore // Adicionando esta anotação para ignorar a serialização recursiva
     private CandidatoEntity candidato;
 
     public Competencia(CompetenciaDTO competenciaDTO) {

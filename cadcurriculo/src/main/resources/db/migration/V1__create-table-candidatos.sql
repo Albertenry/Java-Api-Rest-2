@@ -12,4 +12,4 @@ create table candidatos (
 );
 
 insert into candidatos (nome, cpf, data_nascimento, email, telefone, escolaridade, funcao)
-values ('Albertenry Menezes', '00000000000', '1979-03-13', 'albertenry2@gmail.com', '85982334210', 'SUPERIOR_INCOMPLETO', 'Fullstack');
+values ('Albertenry Menezes', '00000000000', '13-03-1979', 'albertenry2@gmail.com', '85982334210', 'SUPERIOR_INCOMPLETO', 'Fullstack');
